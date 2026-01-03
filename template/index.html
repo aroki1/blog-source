@@ -23,7 +23,10 @@
                     {{ range .Posts }}
                     <post class="post-card">
                         <div class="post-meta">
-                            <span>{{ .Metadata.Date }}</span>
+                            <span
+                                >{{ .Metadata.Date.Format "Jan 02, 2006"
+                                }}</span
+                            >
                             <span>/</span>
                             {{ range .Metadata.Tags }}
                             <span class="tag">#{{ . }}</span>

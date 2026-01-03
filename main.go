@@ -8,7 +8,9 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
+	"time"
 
 	"github.com/adrg/frontmatter"
 	"github.com/yuin/goldmark"
@@ -16,12 +18,12 @@ import (
 )
 
 type PostMetadata struct {
-	Slug        string   `toml:"slug"`
-	Title       string   `toml:"title"`
-	Description string   `toml:"description"`
-	Date        string   `toml:"date"` // think to replace with time.Time
-	Language    string   `toml:"language"`
-	Tags        []string `toml:"tags"`
+	Slug        string    `toml:"slug"`
+	Title       string    `toml:"title"`
+	Description string    `toml:"description"`
+	Date        time.Time `toml:"date"`
+	Language    string    `toml:"language"`
+	Tags        []string  `toml:"tags"`
 }
 
 type PostData struct {
@@ -63,6 +65,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	sort.Slice(postsData, func(i, j int) bool {
+		return postsData[i].Metadata.Date.After(postsData[j].Metadata.Date)
+	})
 
 	err = ParsepostsMDToHTML(mdRenderer, postsData)
 	if err != nil {

@@ -1,7 +1,7 @@
 +++
 title = "Второй пост"
 description = "Тест второго поста"
-date = "2025-03-01"
+date = 2025-01-03
 tags = ["go"]
 language = "ru"
 +++

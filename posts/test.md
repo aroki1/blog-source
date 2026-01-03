@@ -1,7 +1,7 @@
 +++
 title = "first post"
 description = "Testing first post"
-date = "2025-02-01"
+date = 2025-01-02
 tags = ["go", "development", "tech"]
 language = "en"
 +++
