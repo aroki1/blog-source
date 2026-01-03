@@ -26,7 +26,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
-          external_repository: aroki1/aroki.github.io
+          external_repository: aroki1/aroki1.github.io
           publish_dir: ./public
           publish_branch: main
-          force_modify: true
+          force_orphan: true
