@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ .Metadata.Title }}</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            {{template "header" .}}
+
+            <main>
+                <a href="/" class="back-link"> <-Back to posts</a>
+
+                <post>
+                    <div class="post-header">
+                        <div class="post-meta">
+                            <span>{{ .Metadata.Date }}</span>
+                            <span>/</span>
+                            {{ range .Metadata.Tags }}
+                            <span class="post-tag">#{{ . }}</span>
+                            {{ end }}
+                            <span class="lang"
+                                ><span
+                                    class="{{if eq .Metadata.Language "en"}}lang-active{{end}}"
+                                    >en</span
+                                >
+                                / <span class="{{if eq .Metadata.Language "ru"}}lang-active{{end}}">ru</span>
+                        </div>
+                        <h1>{{ .Metadata.Title }}</h1>
+                        <p class="lead">{{ .Metadata.Description }}</p>
+                    </div>
+
+                    <div class="post-content">{{ .Content }}</div>
+                </post>
+            </main>
+
+            {{template "footer" .}}
+        </div>
+    </body>
+</html>

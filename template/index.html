@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Posts</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            {{template "header" .}}
+
+            <main>
+                <section class="intro">
+                    <h1>Learning Go, deferring panic.</h1>
+                    <p>
+                        Diving deep into backend engineering and Linux. Trying
+                        to understand how things work under the hood.
+                    </p>
+                </section>
+
+                <div class="post-list">
+                    {{ range .Posts }}
+                    <post class="post-card">
+                        <div class="post-meta">
+                            <span>{{ .Metadata.Date }}</span>
+                            <span>/</span>
+                            {{ range .Metadata.Tags }}
+                            <span class="tag">#{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        <a
+                            href="/posts/{{ .Metadata.Slug }}.html"
+                            class="title-link"
+                        >
+                            <h2 class="post-title">{{ .Metadata.Title }}</h2>
+                        </a>
+                        <p class="post-excerpt">{{ .Metadata.Description }}</p>
+                        <a
+                            href="/posts/{{ .Metadata.Slug }}.html"
+                            class="read-more"
+                            >Read post</a
+                        >
+                    </post>
+                    {{ end }}
+                </div>
+            </main>
+
+            {{template "footer" .}}
+        </div>
+    </body>
+</html>

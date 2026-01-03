@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <div class="container">
+            {{template "header" .}}
+
+            <main>
+                <h1>
+                    I'm aroki, Junior Go Developer. <br />
+                    I learn backend engineering with Go.
+                    <br />Linux enthusiast.
+                </h1>
+
+                <div class="content-grid">
+                    <div class="left-col">
+                        <section style="margin-bottom: 50px">
+                            <h2>Now / Goal</h2>
+                            <p>
+                                Currently implementing a REST API service using
+                                a database and design patterns. Practicing to
+                                better understand Clean Architecture and how the
+                                standard library works under the hood. Also
+                                reading the Go classics to master the language
+                                fundamentals.
+                            </p>
+                        </section>
+
+                        <section>
+                            <h2>Background</h2>
+                            <p>
+                                I started with languages like <b>Python</b> and
+                                <b>JavaScript</b>, building bots, games and
+                                fullstack web apps. For more performance and
+                                understanding of memory, I studied <b>C</b> and
+                                built projects in <b>Rust</b>.
+                            </p>
+                            <p>
+                                Why <span class="highlight">Go</span>? After
+                                working with dynamic languages and manual memory
+                                management, Go felt right. It offers simplicity,
+                                strict typing and performance needed to build
+                                reliable software, without the complexity
+                                overhead.
+                            </p>
+                        </section>
+                    </div>
+
+                    <div class="right-col">
+                        <section style="margin-bottom: 40px">
+                            <h2>Toolkit</h2>
+                            <ul>
+                                <li class="list-item">Golang</li>
+                                <li class="list-item">REST API</li>
+                                <li class="list-item">Postgres</li>
+                                <li class="list-item">Linux (Basics)</li>
+                                <li class="list-item">Git</li>
+                            </ul>
+                        </section>
+
+                        <section>
+                            <h2>Bookshelf</h2>
+                            <div class="book-item">
+                                <span class="book-title"
+                                    >The Go Programming Language</span
+                                >
+                                <span class="book-author"
+                                    >Donovan & Kernighan</span
+                                >
+                            </div>
+                            <div class="book-item">
+                                <span class="book-title"
+                                    >Learning Go: An Idiomatic Approach to
+                                    Real-World Go Programming
+                                </span>
+                                <span class="book-author">Jon Bodner</span>
+                            </div>
+                            <div class="book-item">
+                                <span class="book-title"
+                                    >Grokking Algorithms: An Illustrated Guide
+                                    for Programmers and Other Curious
+                                    People</span
+                                >
+                                <span class="book-author"
+                                    >Aditya Bhargava
+                                </span>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+
+            {{template "footer" .}}
+        </div>
+    </body>
+</html>
